@@ -1,0 +1,39 @@
+# ============================================================
+#  251 Assignment 1 - Text Editor configuration file (YAML)
+#  Group: Bi Tongcheng (25014402) & Ma Shuo (25014500)
+#
+#  This file holds the default parameters of the text editor.
+#  It is read by the Java class `EditorConfigLoader` at startup,
+#  so the GUI is configured with these values before it is shown.
+#  Member A is responsible for this configuration module.
+# ============================================================
+
+# ---- Main window defaults ------------------------------------
+window:
+  title: "251 Text Editor"
+  width: 900        # default editing-area window width  (pixels)
+  height: 650       # default editing-area window height (pixels)
+  x: 100            # initial horizontal position of the window
+  y: 60             # initial vertical position of the window
+  defaultFolder: "" # empty => start browsing from the user home folder
+
+# ---- Editor text area defaults -------------------------------
+editor:
+  fontFamily: "Monospaced"   # font family used in the editing area
+  fontSize: 14               # default font size (pt)
+  fontColor: "#000000"       # default foreground (text) colour
+  backgroundColor: "#FFFFFF" # default background colour of the editing area
+  caretColor: "#CC0000"      # colour of the text cursor
+  wrapLine: true             # whether long lines are wrapped
+  tabSize: 4                 # number of spaces a tab is expanded to
+
+# ---- Search defaults -----------------------------------------
+search:
+  caseSensitive: false       # default search is case-insensitive
+  highlightColor: "#FFFF00"  # colour used to highlight search matches
+
+# ---- Application metadata ------------------------------------
+about:
+  title: "About 251 Text Editor"
+  group: "Bi Tongcheng (25014402) & Ma Shuo (25014500)"
+  version: "1.0.0"
