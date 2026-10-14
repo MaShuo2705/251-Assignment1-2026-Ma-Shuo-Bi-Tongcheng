@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  251-Assignment1-2026 - Software Design and Construction
+  Group: Bi Tongcheng (25014402) & Ma Shuo (25014500)
+
+  Maven Project descriptor.
+  This is the base pom owned by the whole group.
+  NOTE: Advanced third-party dependencies (ODT/RTF parsing, PDFBox, syntax
+  highlighting) and quality plugins (SpotBugs / PMD / metrics) are added by
+  member B on top of this file. This pom keeps the minimal set required for
+  member A's GUI + YAML configuration module so the project can compile and
+  run independently.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>nz.ac.massey</groupId>
+    <artifactId>251-assignment1-texteditor</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>251 Assignment 1 Text Editor</name>
+    <description>
+        A standard GUI text editor (similar to Notepad). Member A is responsible
+        for the main GUI window, basic editing functions and the YAML configuration
+        module. Member B is responsible for advanced file formats (ODT/RTF/PDF),
+        syntax highlighting, code quality tooling, CI and Docker.
+    </description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>21</maven.compiler.release>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <junit.version>5.10.2</junit.version>
+        <snakeyaml.version>2.2</snakeyaml.version>
+    </properties>
+
+    <dependencies>
+        <!-- YAML configuration parsing (member A: config module) -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>${snakeyaml.version}</version>
+        </dependency>
+
+        <!-- JUnit 5 for unit tests (bonus: open/save/search tests) -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>251-assignment1-texteditor</finalName>
+        <plugins>
+            <!-- Compiler plugin: compile to Java 21 bytecode -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>21</release>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- Surefire plugin: run JUnit 5 tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+
+            <!-- Exec plugin: convenience to run the editor with: mvn exec:java -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <mainClass>texteditor.TextEditorApp</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
