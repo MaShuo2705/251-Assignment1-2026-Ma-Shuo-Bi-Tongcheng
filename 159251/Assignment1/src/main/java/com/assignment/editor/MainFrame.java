@@ -23,7 +23,9 @@ public class MainFrame extends JFrame
         JMenuItem newItem=new JMenuItem("New");
         newItem.addActionListener(e->new MainFrame());
         fileMenu.add(newItem);
-        
+        JMenuItem exitItem=new JMenuItem("Exit");
+        exitItem.addActionListener(e->System.exit(0));
+        fileMenu.add(exitItem);
         setVisible(true);
     }
     public static void main(String[] args)
