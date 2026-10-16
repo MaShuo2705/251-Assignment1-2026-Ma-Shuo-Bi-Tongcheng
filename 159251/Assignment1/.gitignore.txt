@@ -1,0 +1,2 @@
+﻿SRECYCLE.BIN/
+System Volume Information/
