@@ -26,6 +26,12 @@ public class MainFrame extends JFrame
         JMenuItem exitItem=new JMenuItem("Exit");
         exitItem.addActionListener(e->System.exit(0));
         fileMenu.add(exitItem);
+        JLabel timeLabel = new JLabel();
+        add(timeLabel, BorderLayout.NORTH);
+        new Timer(1000,e->
+        {
+            timeLabel.setText(java.time.LocalDateTime.now().toString());
+        }).start();
         setVisible(true);
     }
     public static void main(String[] args)
