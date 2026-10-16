@@ -20,6 +20,10 @@ public class MainFrame extends JFrame
         setJMenuBar(menuBar);
         JTextArea textArea=new JTextArea();
         add(new JScrollPane(textArea),BorderLayout.CENTER);
+        JMenuItem newItem=new JMenuItem("New");
+        newItem.addActionListener(e->new MainFrame());
+        fileMenu.add(newItem);
+        
         setVisible(true);
     }
     public static void main(String[] args)
