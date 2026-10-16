@@ -26,7 +26,7 @@ public class MainFrame extends JFrame
         JMenuItem exitItem=new JMenuItem("Exit");
         exitItem.addActionListener(e->System.exit(0));
         fileMenu.add(exitItem);
-        JLabel timeLabel = new JLabel();
+        JLabel timeLabel=new JLabel();
         add(timeLabel, BorderLayout.NORTH);
         new Timer(1000,e->
         {
