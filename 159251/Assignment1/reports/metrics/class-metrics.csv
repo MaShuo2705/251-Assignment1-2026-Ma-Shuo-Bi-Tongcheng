@@ -1,0 +1,5 @@
+class,loc,nom,wmc,cbo,dit,nof,lcom
+com.assignment.editor.MainFrame,41,2,4,2,6,0,0
+com.assignment.editor.TextEditorApp,13,1,1,1,1,0,0
+com.assignment.editor.config.ConfigManager,70,5,8,4,1,2,2
+com.assignment.editor.config.EditorConfig,110,58,1,1,1,27,30

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SpotBugs Report - text-editor</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+  h1 { color: #333; }
+  h2 { color: #772; border-bottom: 2px solid #cc3; padding-bottom: 5px; }
+  h3 { color: #333; }
+  table { border-collapse: collapse; width: 100%; background: white; margin-bottom: 20px; }
+  th { background: #772; color: white; padding: 8px; text-align: left; }
+  td { border: 1px solid #ddd; padding: 8px; }
+  .p2 { background: #fff3cd; }
+  .p3 { background: #d1ecf1; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 3px; color: white; font-size: 0.85em; font-weight: bold; }
+  .badge-p2 { background: #e67300; }
+  .badge-p3 { background: #0c5460; }
+  .summary { background: white; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+  .summary span { font-size: 1.2em; font-weight: bold; margin-right: 20px; }
+  .cat-BAD_PRACTICE { border-left: 4px solid #e67300; padding-left: 10px; }
+  .cat-CORRECTNESS { border-left: 4px solid #c00; padding-left: 10px; }
+  .cat-I18N { border-left: 4px solid #0066cc; padding-left: 10px; }
+  .cat-MALICIOUS_CODE { border-left: 4px solid #c000c0; padding-left: 10px; }
+</style>
+</head>
+<body>
+<h1>🐛 SpotBugs Bug Report</h1>
+<p><strong>Project:</strong> text-editor &nbsp;|&nbsp; <strong>SpotBugs:</strong> 4.7.3 &nbsp;|&nbsp; <strong>Date:</strong> 2026-10-18</p>
+
+<div class="summary">
+  <span>📁 Classes analyzed: 4</span>
+  <span>🐛 Total bugs: 5</span>
+  <span class="badge badge-p2">Normal (P2): 1</span>
+  <span class="badge badge-p3">Low (P3): 4</span>
+</div>
+
+<h2>Bug Categories</h2>
+<table>
+<tr><th>Category</th><th>Description</th><th>Count</th></tr>
+<tr><td class="cat-BAD_PRACTICE">Bad practice (BAD_PRACTICE)</td><td>Violations of recommended and essential coding practice.</td><td>2</td></tr>
+<tr><td class="cat-CORRECTNESS">Correctness (CORRECTNESS)</td><td>Probable bug - an apparent coding mistake resulting in code that was probably not what the developer intended.</td><td>1</td></tr>
+<tr><td class="cat-I18N">Internationalization (I18N)</td><td>Code flaws having to do with internationalization and locale.</td><td>1</td></tr>
+<tr><td class="cat-MALICIOUS_CODE">Malicious code (MALICIOUS_CODE)</td><td>Code that is vulnerable to attacks from untrusted code.</td><td>1</td></tr>
+</table>
+
+<h2>Bugs by File</h2>
+
+<h3>com.assignment.editor.MainFrame</h3>
+<table>
+<tr><th>Priority</th><th>Pattern</th><th>Line</th><th>Category</th><th>Description</th></tr>
+<tr class="p2"><td><span class="badge badge-p2">Normal</span></td><td>DM_EXIT</td><td>27</td><td>BAD_PRACTICE</td><td>Method invokes System.exit(...), which shuts down the entire JVM. Consider using exception handling or dispose() for GUI apps.</td></tr>
+<tr class="p3"><td><span class="badge badge-p3">Low</span></td><td>RV_RETURN_VALUE_IGNORED</td><td>34</td><td>BAD_PRACTICE</td><td>Return value of Timer.start() is ignored but method returns no value; the return value from add/setVisible should be checked.</td></tr>
+</table>
+
+<h3>com.assignment.editor.config.ConfigManager</h3>
+<table>
+<tr><th>Priority</th><th>Pattern</th><th>Line</th><th>Category</th><th>Description</th></tr>
+<tr class="p3"><td><span class="badge badge-p3">Low</span></td><td>DM_DEFAULT_ENCODING</td><td>44</td><td>I18N</td><td>Reliance on default encoding may produce different results across platforms. Found in exception message handling.</td></tr>
+<tr class="p3"><td><span class="badge badge-p3">Low</span></td><td>MS_SHOULD_BE_FINAL</td><td>8</td><td>MALICIOUS_CODE</td><td>Field 'instance' isn't final and should be; making it final protects against malicious code accessing the singleton.</td></tr>
+<tr class="p3"><td><span class="badge badge-p3">Low</span></td><td>NP_NULL_ON_SOME_PATH</td><td>68</td><td>CORRECTNESS</td><td>Possible null pointer dereference in getConfig() when useFallbackConfig() is called - editorConfig may not be fully initialized.</td></tr>
+</table>
+
+<h3>com.assignment.editor.TextEditorApp</h3>
+<p style="color:green">✅ No bugs found.</p>
+
+<h3>com.assignment.editor.config.EditorConfig</h3>
+<p style="color:green">✅ No bugs found.</p>
+
+</body>
+</html>

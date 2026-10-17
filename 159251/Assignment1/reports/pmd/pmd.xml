@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
+     version="6.55.0" timestamp="2026-10-18T00:00:00.000">
+<file name="com/assignment/editor/MainFrame.java">
+<violation beginline="27" endline="27" begincolumn="33" endcolumn="46" rule="SystemExit" ruleset="Code Style" package="com.assignment.editor" class="MainFrame" method="lambda$new$0" priority="3">
+System.exit() should not be used in Java applications.
+</violation>
+<violation beginline="8" endline="8" begincolumn="9" endcolumn="35" rule="NoPackage" ruleset="Code Style" package="com.assignment.editor" class="MainFrame" priority="4">
+All classes and interfaces must belong to a named package.
+</violation>
+<violation beginline="4" endline="4" begincolumn="14" endcolumn="23" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.assignment.editor" class="MainFrame" priority="3">
+Each class should declare at least one constructor.
+</violation>
+<violation beginline="21" endline="21" begincolumn="9" endcolumn="36" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment.editor" class="MainFrame" method="&lt;init&gt;" priority="4">
+Local variable 'textArea' could be declared final.
+</violation>
+<violation beginline="23" endline="23" begincolumn="9" endcolumn="40" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment.editor" class="MainFrame" method="&lt;init&gt;" priority="4">
+Local variable 'newItem' could be declared final.
+</violation>
+<violation beginline="26" endline="26" begincolumn="9" endcolumn="40" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment.editor" class="MainFrame" method="&lt;init&gt;" priority="4">
+Local variable 'exitItem' could be declared final.
+</violation>
+<violation beginline="29" endline="29" begincolumn="9" endcolumn="29" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.assignment.editor" class="MainFrame" method="&lt;init&gt;" priority="4">
+Local variable 'timeLabel' could be declared final.
+</violation>
+</file>
+<file name="com/assignment/editor/TextEditorApp.java">
+<violation beginline="3" endline="3" begincolumn="14" endcolumn="26" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.assignment.editor" class="TextEditorApp" priority="3">
+Each class should declare at least one constructor.
+</violation>
+<violation beginline="5" endline="5" begincolumn="29" endcolumn="33" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.assignment.editor" class="TextEditorApp" method="main" priority="4">
+Parameter 'args' is not assigned and could be declared final.
+</violation>
+</file>
+<file name="com/assignment/editor/config/ConfigManager.java">
+<violation beginline="8" endline="8" begincolumn="28" endcolumn="41" rule="FieldNamingConventions" ruleset="Code Style" package="com.assignment.editor.config" class="ConfigManager" priority="3">
+The static field name 'instance' doesn't start with '[A-Z][A-Z0-9]*(_[A-Z0-9]+)*|ERRORS|DEBUG|SYSOUT|SYSEOL|SYSTEM_ERR|SYSTEM_OUT|WARNING_MESSAGE|INFO|WARNING|ERROR|SEVERE|CONFIG|FINE|FINER|FINEST' or end with '[]'.
+</violation>
+<violation beginline="14" endline="14" begincolumn="5" endcolumn="31" rule="DefaultPackage" ruleset="Code Style" package="com.assignment.editor.config" class="ConfigManager" method="getInstance" priority="3">
+Use explicit scoping instead of accidental usage of default package private modifier.
+</violation>
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="4" rule="UnusedImports" ruleset="Code Style" package="com.assignment.editor.config" priority="4">
+Avoid unused imports such as 'java.util.HashMap'.
+</violation>
+<violation beginline="6" endline="6" begincolumn="14" endcolumn="27" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.assignment.editor.config" class="ConfigManager" priority="3">
+Each class should declare at least one public constructor.
+</violation>
+</file>
+<file name="com/assignment/editor/config/EditorConfig.java">
+<violation beginline="6" endline="6" begincolumn="5" endcolumn="28" rule="InnerClassField" ruleset="Code Style" package="com.assignment.editor.config" class="EditorConfig$EditorSubConfig" priority="4">
+The inner class field 'window' is accessed in an invalid way.
+</violation>
+<violation beginline="3" endline="3" begincolumn="14" endcolumn="26" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.assignment.editor.config" class="EditorConfig" priority="3">
+Each class should declare at least one constructor.
+</violation>
+<violation beginline="2" endline="2" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Code Style" package="com.assignment.editor.config" priority="4">
+Avoid unused imports such as 'java.util.Map'.
+</violation>
+</file>
+</pmd>

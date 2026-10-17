@@ -1,16 +1,20 @@
 package com.assignment.editor.config;
+
 import org.yaml.snakeyaml.Yaml;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+
 public class ConfigManager
 {
     private static volatile ConfigManager instance;
     private EditorConfig editorConfig;
+
     private ConfigManager()
     {
         loadConfig();
     }
+
     public static ConfigManager getInstance()
     {
         if(instance==null)
@@ -25,12 +29,13 @@ public class ConfigManager
         }
         return instance;
     }
+
     private void loadConfig()
     {
         Yaml yaml=new Yaml();
-        try(InputStream inputStream=this.getClass().getClassLoader().getResourceAsStream("default-config.yaml")) 
+        try(InputStream inputStream=this.getClass().getClassLoader().getResourceAsStream("default-config.yaml"))
         {
-            if(inputStream==null) 
+            if(inputStream==null)
             {
                 System.err.println("Warning: Default configuration file not found, built-in default parameters will be used.");
                 useFallbackConfig();
@@ -38,13 +43,14 @@ public class ConfigManager
             }
             this.editorConfig=yaml.loadAs(inputStream, EditorConfig.class);
             System.out.println("Configuration file loaded successfully");
-        } 
+        }
         catch (Exception e)
         {
             System.err.println("Configuration file parsing failed, built-in default parameters will be used." + e.getMessage());
             useFallbackConfig();
         }
     }
+
     private void useFallbackConfig()
     {
         EditorConfig.EditorSubConfig editor=new EditorConfig.EditorSubConfig();
@@ -63,6 +69,7 @@ public class ConfigManager
         this.editorConfig=new EditorConfig();
         this.editorConfig.setEditor(editor);
     }
+
     public EditorConfig.EditorSubConfig getConfig()
     {
         return editorConfig.getEditor();

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BugCollection version="4.7.3" sequence="0" timestamp="1729209600000" analysisTimestamp="1729209600000">
+  <Project projectName="text-editor">
+    <Jar>target/classes</Jar>
+    <AuxClasspathEntry>~/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>~/.m2/repository/org/apache/pdfbox/pdfbox/2.0.32/pdfbox-2.0.32.jar</AuxClasspathEntry>
+    <SrcDir>src/main/java</SrcDir>
+  </Project>
+  <BugInstance type="DM_EXIT" priority="2" category="BAD_PRACTICE" abbrev="Dm">
+    <Class classname="com.assignment.editor.MainFrame">
+      <SourceLine classname="com.assignment.editor.MainFrame" start="27" end="27" sourcefile="MainFrame.java" sourcepath="com/assignment/editor/MainFrame.java"/>
+    </Class>
+    <Method classname="com.assignment.editor.MainFrame" name="lambda$new$0" signature="()V" isStatic="true">
+      <SourceLine classname="com.assignment.editor.MainFrame" start="27" end="27" sourcefile="MainFrame.java" sourcepath="com/assignment/editor/MainFrame.java"/>
+    </Method>
+    <SourceLine classname="com.assignment.editor.MainFrame" start="27" end="27" startBytecode="8" endBytecode="8" sourcefile="MainFrame.java" sourcepath="com/assignment/editor/MainFrame.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="3" category="I18N" abbrev="Dm">
+    <Class classname="com.assignment.editor.config.ConfigManager">
+      <SourceLine classname="com.assignment.editor.config.ConfigManager" start="6" end="70" sourcefile="ConfigManager.java" sourcepath="com/assignment/editor/config/ConfigManager.java"/>
+    </Class>
+    <Method classname="com.assignment.editor.config.ConfigManager" name="loadConfig" signature="()V">
+      <SourceLine classname="com.assignment.editor.config.ConfigManager" start="28" end="47" sourcefile="ConfigManager.java" sourcepath="com/assignment/editor/config/ConfigManager.java"/>
+    </Method>
+    <SourceLine classname="com.assignment.editor.config.ConfigManager" start="44" end="44" startBytecode="88" endBytecode="88" sourcefile="ConfigManager.java" sourcepath="com/assignment/editor/config/ConfigManager.java"/>
+  </BugInstance>
+  <BugInstance type="MS_SHOULD_BE_FINAL" priority="3" category="MALICIOUS_CODE" abbrev="MS">
+    <Class classname="com.assignment.editor.config.ConfigManager">
+      <SourceLine classname="com.assignment.editor.config.ConfigManager" start="6" end="70" sourcefile="ConfigManager.java" sourcepath="com/assignment/editor/config/ConfigManager.java"/>
+    </Class>
+    <Field classname="com.assignment.editor.config.ConfigManager" name="instance" signature="Lcom/assignment/editor/config/ConfigManager;" isStatic="true" isPublic="false">
+      <SourceLine classname="com.assignment.editor.config.ConfigManager" start="8" end="8" sourcefile="ConfigManager.java" sourcepath="com/assignment/editor/config/ConfigManager.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH" priority="3" category="CORRECTNESS" abbrev="NP">
+    <Class classname="com.assignment.editor.config.ConfigManager">
+      <SourceLine classname="com.assignment.editor.config.ConfigManager" start="6" end="70" sourcefile="ConfigManager.java" sourcepath="com/assignment/editor/config/ConfigManager.java"/>
+    </Class>
+    <Method classname="com.assignment.editor.config.ConfigManager" name="useFallbackConfig" signature="()V">
+      <SourceLine classname="com.assignment.editor.config.ConfigManager" start="48" end="65" sourcefile="ConfigManager.java" sourcepath="com/assignment/editor/config/ConfigManager.java"/>
+    </Method>
+    <SourceLine classname="com.assignment.editor.config.ConfigManager" start="68" end="68" startBytecode="115" endBytecode="115" sourcefile="ConfigManager.java" sourcepath="com/assignment/editor/config/ConfigManager.java"/>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED" priority="3" category="BAD_PRACTICE" abbrev="RV">
+    <Class classname="com.assignment.editor.MainFrame">
+      <SourceLine classname="com.assignment.editor.MainFrame" start="4" end="41" sourcefile="MainFrame.java" sourcepath="com/assignment/editor/MainFrame.java"/>
+    </Class>
+    <Method classname="com.assignment.editor.MainFrame" name="&lt;init&gt;" signature="()V">
+      <SourceLine classname="com.assignment.editor.MainFrame" start="6" end="36" sourcefile="MainFrame.java" sourcepath="com/assignment/editor/MainFrame.java"/>
+    </Method>
+    <SourceLine classname="com.assignment.editor.MainFrame" start="34" end="34" startBytecode="170" endBytecode="170" sourcefile="MainFrame.java" sourcepath="com/assignment/editor/MainFrame.java"/>
+  </BugInstance>
+  <BugCode abbrev="Dm"/>
+  <BugCode abbrev="MS"/>
+  <BugCode abbrev="NP"/>
+  <BugCode abbrev="RV"/>
+  <BugCategory category="BAD_PRACTICE">
+    <Description>Bad practice</Description>
+  </BugCategory>
+  <BugCategory category="CORRECTNESS">
+    <Description>Correctness</Description>
+  </BugCategory>
+  <BugCategory category="I18N">
+    <Description>Internationalization</Description>
+  </BugCategory>
+  <BugCategory category="MALICIOUS_CODE">
+    <Description>Malicious code vulnerability</Description>
+  </BugCategory>
+  <BugPattern type="DM_EXIT" category="BAD_PRACTICE" abbrev="Dm"/>
+  <BugPattern type="DM_DEFAULT_ENCODING" category="I18N" abbrev="Dm"/>
+  <BugPattern type="MS_SHOULD_BE_FINAL" category="MALICIOUS_CODE" abbrev="MS"/>
+  <BugPattern type="NP_NULL_ON_SOME_PATH" category="CORRECTNESS" abbrev="NP"/>
+  <BugPattern type="RV_RETURN_VALUE_IGNORED" category="BAD_PRACTICE" abbrev="RV"/>
+  <Errors errors="0" missingClasses="0"/>
+  <FindBugsSummary total_bugs="5" total_size="235" num_packages="2" java_version="17.0.12" vm_version="17.0.12+7" cpu_seconds="1.23" clock_seconds="2" peak_mbytes="128" alloc_mbytes="256" gc_seconds="0.1" priority_2="1" priority_3="4">
+    <FileStats path="com/assignment/editor/MainFrame.java" bugCount="2" size="41"/>
+    <FileStats path="com/assignment/editor/TextEditorApp.java" bugCount="0" size="13"/>
+    <FileStats path="com/assignment/editor/config/ConfigManager.java" bugCount="3" size="70"/>
+    <FileStats path="com/assignment/editor/config/EditorConfig.java" bugCount="0" size="110"/>
+    <PackageStats package="com.assignment.editor" total_bugs="2" total_size="54" total_types="2"/>
+    <PackageStats package="com.assignment.editor.config" total_bugs="3" total_size="180" total_types="2"/>
+  </FindBugsSummary>
+  <ClassFeatures/>
+  <History/>
+</BugCollection>
