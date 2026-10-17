@@ -51,7 +51,8 @@
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>4.7.3.0</version>
                 <configuration>
-                    <outputDirectory>reports/spotbugs</outputDirectory>
+                    <outputDirectory>D:\159251\Assignment1\reports\spotbugs</outputDirectory>
+                    <includeTests>true</includeTests>
                 </configuration>
             </plugin>
             <plugin>
