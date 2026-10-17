@@ -1,0 +1,37 @@
+editor:
+    window:
+        title: "Java Text Editor"
+        width: 800
+        height: 600
+        resizable: true
+    appearance:
+        font-family: "Monospaced"
+        font-size: 14
+        font-style: "PLAIN"
+        background-color: "#FFFFFF"
+        foreground-color: "#000000"
+        line-wrap: true
+        show-line-numbers: false
+    encoding:
+        default-charset: "UTF-8"
+        fallback-charset: "GBK"
+    behavior:
+        auto-save-interval: 0
+        max-recent-files: 10
+        confirm-exit: true
+    syntax-highlighting:
+        enabled: true
+        colors:
+            keyword: "#0000FF"
+            string: "#008000"
+            comment: "#808080"
+            number: "#FF0000"
+            annotation: "#800080"
+    print:
+        page-margins:
+            top: 1.0
+            bottom: 1.0
+            left: 1.0
+            right: 1.0
+        header-enabled: true
+        footer-enabled: true

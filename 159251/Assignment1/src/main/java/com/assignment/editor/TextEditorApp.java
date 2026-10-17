@@ -1,5 +1,7 @@
 package com.assignment.editor;
+
 import com.assignment.editor.config.*;
+
 public class TextEditorApp
 {
     public static void main(String[]args)
